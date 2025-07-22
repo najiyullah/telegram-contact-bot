@@ -51,7 +51,7 @@ async def to_txt_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_document(document=InputFile(txt_path), filename="converted.txt")
 
 def main():
-    TOKEN = os.getenv("8105467712:AAFiQNTaSslOMDyCuINjMy9GnO14a4M_eAI")
+    TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
     if not TOKEN:
         raise Exception("Env var TELEGRAM_BOT_TOKEN tidak ditemukan!")
     app = ApplicationBuilder().token(TOKEN).build()
