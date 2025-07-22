@@ -58,8 +58,8 @@ def main():
     app.add_handler(CommandHandler("start", start))
     app.add_handler(CommandHandler("to_vcf", to_vcf_handler))
     app.add_handler(CommandHandler("to_txt", to_txt_handler))
-    app.add_handler(MessageHandler(filters.Document.MIME_TYPE("text/plain"), to_vcf_handler))
-    app.add_handler(MessageHandler(filters.Document.MIME_TYPE("text/x-vcard"), to_txt_handler))
+    app.add_handler(MessageHandler(filters.Document.FILE_EXTENSION("txt"), to_vcf_handler))
+    app.add_handler(MessageHandler(filters.Document.FILE_EXTENSION("vcf"), to_txt_handler))
     print("Bot aktif...")
     app.run_polling()
 
